@@ -18,9 +18,9 @@ sbatch test_slurm_are.sh
 ~~~
 
 Check progress with `squeue -u $USER` or `sj JOBID`. When a job finishes it
-writes `test.out.<jobid>` (and `test.err.<jobid>` if anything went to stderr) in
-the directory you submitted from; the `Hello from ...` line in the `.out` file
-tells you which node ran it.
+writes `<job-name>.<jobid>.out` (and `<job-name>.<jobid>.err` if anything went to
+stderr) in the directory you submitted from -- e.g. `slurm_test.12345.out`. The
+`Hello from ...` line in the `.out` file tells you which node ran it.
 
 Only ARE users granted access to the `are` node can run `test_slurm_are.sh`; if
 you lack access the job will be rejected or stay pending. See
